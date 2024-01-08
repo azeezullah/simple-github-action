@@ -26,4 +26,4 @@ jobs:
       - name: Download Artifact from build job
         run: echo "DOWNLOADING ARTIFCAT FROM NEXUS"
       - name: Deploy to Azure App Service
-        run: echo "DEPLOY TO AZURE APP SERVICES"
+        run: echo "DEPLOY TO AZURE APP SERVICES | DEMO"
