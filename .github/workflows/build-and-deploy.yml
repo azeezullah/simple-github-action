@@ -1,0 +1,29 @@
+name: Deploy App to Azure App Service
+
+on:
+  push:
+    branches:
+      - main
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Source
+        run: echo "CHECKING OUR SOURCE CODE"
+      - name: Setup Java
+        uses: actions/setup-java@v3
+        with:
+          distribution: 'temurin'
+          java-version: '17'
+      - name: Build Project
+        run: echo "BUILDING MY PROJECT WITH THE HELP OF MAVEN OR GRADLE"
+      - name: Upload Artifacct for deployment job
+        run: echo "UPLOADING ARTIFICAT INTO NEXUS"
+  deploy:
+    runs-on: ubuntu-latest
+    needs: build
+    steps:
+      - name: Download Artifact from build job
+        run: echo "DOWNLOADING ARTIFCAT FROM NEXUS"
+      - name: Deploy to Azure App Service
+        run: echo "DEPLOY TO AZURE APP SERVICES"
